@@ -1,0 +1,384 @@
+/* ==========================================
+   KAI DIGITAL MODERN DESIGN SYSTEM
+   Premium Dark-Mode with Glassmorphism
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* --- Global Elements & Background --- */
+html, body, [class*="css"], .stApp {
+    font-family: 'Outfit', 'Inter', sans-serif !important;
+}
+
+.stApp {
+    background: radial-gradient(circle at 50% 0%, #1E1B4B 0%, #0F172A 70%, #020617 100%) !important;
+    color: #F8FAFC !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* --- Typography Helpers --- */
+.header-title {
+    background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #2E86AB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.header-sub {
+    color: #94A3B8;
+    font-size: 1.15rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    animation: fadeIn 1s ease-out;
+}
+
+.section-title {
+    color: #F8FAFC;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+}
+
+/* --- Glassmorphism Cards --- */
+.glass-card {
+    background: rgba(30, 41, 59, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeIn 0.5s ease-out;
+}
+.glass-card:hover {
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0 15px 35px -5px rgba(56, 189, 248, 0.1);
+    transform: translateY(-2px);
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background: rgba(30, 41, 59, 0.55) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    padding: 2rem !important;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5) !important;
+    animation: fadeIn 0.6s ease-out !important;
+    margin-bottom: 2rem !important;
+}
+
+.user-info-box {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.profile-container {
+    background: rgba(30, 41, 59, 0.35);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 2rem;
+}
+
+/* --- Ticket Boarding Pass --- */
+.ticket-receipt {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 2px dashed rgba(56, 189, 248, 0.45);
+    padding: 2rem;
+    margin-top: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideUp 0.5s ease-out;
+}
+.ticket-receipt:hover {
+    transform: scale(1.02) rotate(0.5deg);
+    border-color: rgba(56, 189, 248, 0.8);
+}
+.ticket-title {
+    color: #38BDF8;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.75rem;
+}
+.ticket-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    color: #F8FAFC;
+    font-size: 1rem;
+}
+.ticket-label {
+    color: #94A3B8;
+}
+.ticket-value {
+    font-weight: bold;
+    color: #F8FAFC;
+}
+.ticket-barcode {
+    height: 45px;
+    margin: 1.5rem auto 0.5rem auto;
+    background: repeating-linear-gradient(
+        90deg,
+        #F8FAFC,
+        #F8FAFC 2px,
+        transparent 2px,
+        transparent 6px,
+        #F8FAFC 6px,
+        #F8FAFC 9px,
+        transparent 9px,
+        transparent 11px
+    );
+    width: 75%;
+    opacity: 0.7;
+}
+
+/* --- Admin Metric Cards --- */
+.metric-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border-left: 5px solid #38BDF8;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 1rem;
+}
+.metric-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px -5px rgba(56, 189, 248, 0.15);
+    border-color: #818CF8;
+}
+.metric-title {
+    color: #94A3B8;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+}
+.metric-value {
+    color: #F8FAFC;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* --- Streamlit Widget Custom Styling --- */
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background-color: rgba(15, 23, 42, 0.85) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+    backdrop-filter: blur(16px) !important;
+}
+
+/* Buttons */
+div.stButton > button {
+    background: linear-gradient(135deg, #38BDF8 0%, #2563EB 100%) !important;
+    color: #F8FAFC !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding: 0.65rem 1.5rem !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.25) !important;
+    text-transform: none !important;
+    letter-spacing: 0.3px;
+}
+div.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px 0 rgba(37, 99, 235, 0.45) !important;
+    background: linear-gradient(135deg, #7DD3FC 0%, #3B82F6 100%) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+}
+div.stButton > button:active {
+    transform: translateY(0) !important;
+}
+
+/* Secondary Button Styles */
+div.stButton > button[kind="secondary"] {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #E2E8F0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
+}
+
+/* General Secondary Button Hover (Neutral/Blue glow) */
+div.stButton > button[kind="secondary"]:hover {
+    background: rgba(56, 189, 248, 0.12) !important;
+    color: #38BDF8 !important;
+    border-color: rgba(56, 189, 248, 0.35) !important;
+}
+
+/* Sidebar Specific Logout Button Hover (Red warning glow) */
+[data-testid="stSidebar"] div.stButton > button[kind="secondary"]:hover {
+    background: rgba(239, 68, 68, 0.2) !important;
+    color: #FEE2E2 !important;
+    border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Form Inputs */
+.stTextInput input, .stSelectbox [data-baseweb="select"], .stNumberInput input, .stTextArea textarea {
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #F8FAFC !important;
+    border-radius: 12px !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease !important;
+}
+.stTextInput input:focus, .stSelectbox [data-baseweb="select"]:focus, .stNumberInput input:focus {
+    border-color: #38BDF8 !important;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25) !important;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px !important;
+    background-color: rgba(15, 23, 42, 0.45) !important;
+    padding: 6px !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+.stTabs [data-baseweb="tab"] {
+    height: 40px !important;
+    padding: 0 20px !important;
+    border-radius: 10px !important;
+    color: #94A3B8 !important;
+    font-weight: 500 !important;
+    border: none !important;
+    transition: all 0.25s ease !important;
+    background-color: transparent !important;
+}
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    background: linear-gradient(135deg, #38BDF8 0%, #2563EB 100%) !important;
+    color: #F8FAFC !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
+}
+.stTabs [data-baseweb="tab"]:hover {
+    color: #F8FAFC !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Chatbot Messages */
+[data-testid="stChatMessage"] {
+    background-color: rgba(30, 41, 59, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px !important;
+    padding: 1.2rem !important;
+    margin-bottom: 0.9rem !important;
+    animation: slideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+    box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-testid="stChatMessage"]:has(img[alt="user"]) {
+    background-color: rgba(56, 189, 248, 0.08) !important;
+    border: 1px solid rgba(56, 189, 248, 0.15) !important;
+}
+
+/* Connection Badges */
+.status-badge-connected {
+    background-color: rgba(6, 78, 59, 0.4) !important;
+    color: #34D399 !important;
+    padding: 6px 14px !important;
+    border-radius: 9999px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(52, 211, 153, 0.3) !important;
+    display: inline-block;
+    text-align: center;
+}
+
+.status-badge-offline {
+    background-color: rgba(120, 53, 15, 0.4) !important;
+    color: #FBBF24 !important;
+    padding: 6px 14px !important;
+    border-radius: 9999px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(251, 191, 36, 0.3) !important;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Footer style */
+.footer {
+    position: relative;
+    margin-top: 5rem;
+    padding: 2rem 0;
+    text-align: center;
+    color: #64748B;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.user-header, .admin-header {
+    background: linear-gradient(135deg, #38BDF8 0%, #818CF8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+    animation: fadeIn 0.5s ease-out;
+}
+.user-sub, .admin-sub {
+    color: #94A3B8;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.7s ease-out;
+}
+
+.navbar-container {
+    background: rgba(30, 41, 59, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.45s ease-out;
+}
